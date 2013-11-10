@@ -46,7 +46,12 @@ var    connection = io.connect('http://browsertest.htmltoronto.ca:57800'),
         for (i = 0; i < allLayoutInputs.length; i = i + 1) {
 
             // Use addEventListener for good practice rather than the onchange method
-            allLayoutInputs[i].addEventListener('change', updateLayout);
+            if (allLayoutInputs[i].addEventListener) {
+	            allLayoutInputs[i].addEventListener('change', updateLayout);
+            } else if (allLayoutInputs[i].attachEvent) {
+	            allLayoutInputs[i].attachEvent('onchange', updateLayout);
+            }
+            
             // Using the addEventListener method means we can always removeEventListener if we ever needed to
             // and it also allows for additional events to be associated to the event.
 
@@ -55,12 +60,33 @@ var    connection = io.connect('http://browsertest.htmltoronto.ca:57800'),
 
     // Capture the update and submit to the server
     updateLayout = function (evt) {
+    
+    	// Setup the placeholder values
+    	var newValue,
+    		selectorText,
+    		attribute,
+    		type;
+    	
+    	// Use the appropriate dataset capabilities where is it available to ensure we follow best practices
+    	if (evt.target.dataset) {
+	    	newValue		= evt.target.value;
+	    	selectorText	= evt.target.dataset.target;
+	    	attribute		= evt.target.dataset.attribute;
+	    	type			= evt.target.dataset.type;
+	    
+	    // If it’s a modern browser that supports standards and websockets but doesn’t yet allow for datasets *cough IE10* then fall back to getAttribute
+    	} else {
+	    	newValue		= evt.target.getAttribute('data-value');
+	    	selectorText	= evt.target.getAttribute('data-target');
+	    	attribute		= evt.target.getAttribute('data-attribute');
+	    	type			= evt.target.getAttribute('data-type');
+    	}
 
         // Capture the new value to be sent as a raw value
         var newValue = evt.target.value;
 
         // Depending on the type of data needed for CSS, append the prefix or postfix
-        switch (evt.target.dataset.type) {
+        switch (type) {
 
         // Primary case, most values are simple pixel values
         case 'px':
@@ -77,8 +103,8 @@ var    connection = io.connect('http://browsertest.htmltoronto.ca:57800'),
         }
         // Emit the target information as well as the new data
         connection.emit('submitUpdateLayout', {
-            selectorText: evt.target.dataset.target,
-            attribute: evt.target.dataset.attribute,
+            selectorText: selectorText,
+            attribute: attribute,
             value: newValue
         });
     };
