@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link type="text/css" href="./interface.css" rel="Stylesheet" />
+	</head>
+	<body>
+		<form>
+			<div>
+				<label for="primaryContent-backgroundColor">Background: 
+				<input
+					id="primaryContent-backgroundColor"
+					type="color"
+					
+					rel="layoutControllers"
+					
+					data-target="#primaryContent"
+					data-attribute="backgroundColor"
+					data-type="color"
+					value="#FFFFFF"
+				/></label>
+			</div>
+			<div>
+				<label for="primaryContent-fontSize">Font Size: 
+				<input
+					id="primaryContent-fontSize"
+					type="number"
+					
+					rel="layoutControllers"
+					data-target="#primaryContent"
+					data-attribute="fontSize"
+					data-type="px"
+					value="13" min="1" max="144"
+				/></label>
+			</div>
+			<div>
+				<label>Margins:</label>
+				<label for="primaryContent-marginLeft">&nbsp;&nbsp;&nbsp;Left: <input id="primaryContent-marginLeft" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="marginLeft" data-type="perc" min="0" max="100" value="0" /></label>
+				<label for="primaryContent-marginRight">&nbsp;&nbsp;&nbsp;Right: <input id="primaryContent-marginRight" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="marginRight" data-type="perc" min="0" max="100" value="0" /></label>
+			</div>
+			<div>
+				<label>Paddings:</label>
+				<label for="primaryContent-paddingLeft">&nbsp;&nbsp;&nbsp;Left: <input id="primaryContent-marginLeft" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="paddingLeft" data-type="px" min="0" max="255" value="0" /></label>
+				<label for="primaryContent-paddingRight">&nbsp;&nbsp;&nbsp;Right: <input id="primaryContent-marginRight" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="paddingRight" data-type="px" min="0" max="255" value="0" /></label>
+				<label for="primaryContent-paddingTop">&nbsp;&nbsp;&nbsp;Top: <input id="primaryContent-marginLeft" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="paddingTop" data-type="px" min="0" max="255" value="0" /></label>
+				<label for="primaryContent-paddingBottom">&nbsp;&nbsp;&nbsp;Bottom: <input id="primaryContent-marginRight" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="paddingBottom" data-type="px" min="0" max="255" value="0" /></label>
+			</div>
+			<div>
+				<label for="primaryContent-borderRadius">Border Radius: <input id="primaryContent-borderRadius" type="range" rel="layoutControllers" data-target="#primaryContent" data-attribute="borderRadius" data-type="px" min="0" max="255" value="0" /></label>
+			</div>
+			<div>
+				<label for="primaryContent-fontFamily">Font-Family:
+				<select rel="layoutControllers" data-target="#primaryContent" data-attribute="fontFamily" data-type="string">
+					<option value="Ubuntu">Ubuntu</option>
+					<option value="serif">Serif</option>
+					<option value="Sans-Serif">Sans-Serif</option>
+				</select>
+				</label>
+			</div>
+		</form>
+		<div id="primaryContent">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget metus varius, faucibus arcu a, rhoncus nulla. Nullam scelerisque nec tortor eu lacinia. Donec sodales, urna sit amet tempus egestas, neque turpis blandit lorem, quis imperdiet elit est a magna. Ut ut commodo elit. Phasellus quis fermentum nulla. In enim nibh, bibendum vel vulputate a, pretium quis est. Curabitur eu lectus luctus, dapibus erat sit amet, vulputate nisl.</p>
+			<p>Cras vestibulum mauris libero. Phasellus ligula mauris, lacinia non suscipit sed, consequat a orci. Mauris et nunc sollicitudin, iaculis felis in, rhoncus nisl. Pellentesque diam dui, egestas ac orci non, euismod malesuada urna. Donec eleifend suscipit arcu at fringilla. Phasellus fringilla felis at nisl dictum fermentum. Pellentesque vehicula tincidunt ligula, convallis ultricies massa pharetra pellentesque. Praesent condimentum varius justo, non pulvinar diam aliquet id. Sed a nibh turpis. Curabitur dapibus dapibus felis, eget fringilla nulla ultricies quis. Etiam in urna convallis elit commodo lacinia.</p>
+			<p>Sed lobortis, sapien eu sollicitudin suscipit, justo quam adipiscing eros, sed ullamcorper diam justo at sapien. Pellentesque adipiscing augue orci, nec euismod orci tristique eu. Donec et lorem sapien. Sed volutpat, metus sed hendrerit scelerisque, dui mauris molestie ipsum, accumsan tincidunt velit turpis non lectus. Nulla ante est, iaculis ac feugiat et, placerat aliquam massa. Pellentesque libero ipsum, ultrices vitae malesuada auctor, suscipit in orci. Quisque aliquet cursus felis ut eleifend. Aliquam lacus nulla, elementum sed elementum vel, adipiscing non augue. Mauris nec egestas risus. Integer imperdiet nisi nec tellus blandit gravida. Sed facilisis in massa vitae facilisis. Aliquam ac facilisis velit. Suspendisse non lacinia libero.</p>
+			<p>Nullam at elit at ligula hendrerit consectetur. Morbi sagittis nisi sit amet ante porttitor, sit amet eleifend magna pretium. Nunc lacinia vestibulum euismod. Aenean tortor quam, tincidunt a tristique non, congue non massa. Ut sed tincidunt sapien, vitae euismod magna. Pellentesque facilisis sagittis felis, a congue nunc auctor lobortis. Quisque sed magna vitae nisi ullamcorper tristique. Etiam semper sem dui, eget vulputate lorem iaculis sed. Suspendisse ultricies pharetra odio, eget blandit tortor pellentesque et. Sed tellus justo, tristique nec elit non, eleifend viverra metus. Vivamus accumsan est vitae ultricies varius.</p>
+			<p>Maecenas sed tristique magna. Nunc neque lacus, vestibulum ac dictum id, placerat vestibulum eros. Integer ullamcorper nisi ut felis malesuada sodales. Praesent vestibulum massa libero, ut euismod purus dignissim a. Vivamus nec mattis justo, nec eleifend metus. Aenean quis magna molestie, posuere mauris eu, tempus ante. Integer magna lacus, pharetra ac semper non, vulputate quis sem. Integer auctor lobortis neque, quis lobortis augue. Duis lacinia lacus vel porta dapibus.</p>
+		</div>
+		<script type="text/javascript" src="http://browsertest.htmltoronto.ca:57800/socket.io/socket.io.js:57800"></script>
+		<script type="text/javascript" src="./client.js"></script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+html, body {
+	font-family: "Ubuntu";
+	margin: 0px;
+	padding: 0px;
+}
+
+form {
+	padding: 10px;
+	background-color: rgba(0,0,0,0.2);
+	float: left;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+label {
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	margin-top: 4px;
+}
+
+input, select, textarea {
+	margin-bottom: 4px;
+	float: right;
+}
+
+label input {
+	float: right;
+	width: 40%;
+}
+
+@media (min-width: 767px) {
+	body {
+		padding-left: 300px;
+	}
+	
+	form {
+		width: 250px;
+		margin-left: 15px;
+		left: 0px;
+		position: absolute;
+	}
+}
+
+#primaryContent {
+	font-size: 13px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
